@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/css/noscript.css" />
+    <link rel="stylesheet" href="./style/css/main.css" />
+    <title>Todo list</title>
+  </head>
+  <body>
+    <!--noscript-->
+    <noscript class="no-js">
+      <div class="no-js-center">
+        <h2>JavaScript is required</h2>
+        <hr />
+        <p>
+          I am sorry, but this pages requires you to enable JavaScript to work
+          properly. So please upgrade your settings, then come back.
+        </p>
+        <a href="#" class="no-js-btn">reload</a>
+        <a href="https://google.com" class="no-js-btn">google</a>
+      </div>
+    </noscript>
+    <!--end of noscript-->
+
+    <!--App-->
+    <header class="App">
+      <div class="App-center">
+        <!-------------OUTPUT------------------>
+        <div class="App-output">
+          <div class="App-title">
+            <h4>Todos</h4>
+            <span>hide</span>
+          </div>
+          <div class="App-body">
+            <ul id="output">
+              here will be your todos
+            </ul>
+          </div>
+        </div>
+        <!-------------INPUT------------------>
+        <div class="App-input">
+          <div class="App-title">
+            <h4>Add a todo</h4>
+            <span>hide</span>
+          </div>
+          <div class="App-body">
+            <form>
+              <input
+                type="text"
+                id="input-title"
+                placeholder="Todo title"
+                maxlength="32"
+                required
+              />
+              <textarea
+                id="input-descr"
+                maxlength="255"
+                placeholder="Todo description(optional)"
+              ></textarea>
+              <div>
+                Todo priority:
+                <select id="input-priority" required>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+              <input type="submit" class="btn" id="input-save" value="save" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--App-->
+
+    <!--Description-->
+    <section class="section description">
+      <div class="section-center description-center">
+        <div class="section-title">
+          <h2>About <span>Todos</span></h2>
+          <div class="underline"></div>
+        </div>
+        <p>
+          liquam suscipit eos cumque magni! A aliquid sequi rerum tempora saepe.
+          Dolorum ipsa iure illo vitae harum minus optio quaerat ipsum tempora.
+          Aliquam saepe harum quibusdam, delectus blanditiis illum magni.
+          Debitis, unde sapiente enim et <a href="#">accusamus</a> hic qui modi
+          voluptates. Ipsum placeat deleniti ea ipsam atque vero, enim quam quod
+          voluptas accusantium unde aliquam quae dicta corporis eum inventore ut
+          quisquam. <span class="badge">Prague</span> nisi blanditiis enim ullam
+          esse deleniti provident id cupiditate dicta dolore sit, laboriosam
+          inventore neque numquam consequuntur saepe eius, fuga totam vitae
+          veritatis. Placeat, reiciendis fuga, deleniti consequatur harum itaque
+          excepturi quia magni consectetur doloribus earum quo dolorem optio
+          modi quos ipsam quas odit <span class="badge">1989</span> vitae
+          repellat facere? Mollitia enim nam obcaecati possimus autem dicta
+          excepturi nemo dolorum minima beatae recusandae quidem quod ipsum
+          optio sequi repellendus odit, explicabo sed voluptate. CLorem ipsum
+          dolor sit amet consectetur, adipisicing elit. Tenetur aorporis
+          inventore labore expedita quos tenetur nemo reiciendis!
+        </p>
+      </div>
+    </section>
+    <!--Description-->
+
+    <!--footer-->
+    <footer class="section footer">
+      <div class="section-center footer-center">
+        <p>copyright &copy; <span id="copy-year">2022</span> Andrew Tuček</p>
+        <p>source code <a href="#">here</a></p>
+      </div>
+    </footer>
+    <!--footer-->
+
+    <!---->
+    <script src="./scripts/dist/main.js"></script>
+  </body>
+</html>

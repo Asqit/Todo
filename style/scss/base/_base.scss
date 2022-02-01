@@ -1,0 +1,357 @@
+// Light colors
+$red-light: rgb(255, 59, 48);
+$orange-light: rgb(255, 149, 0);
+$yellow-light: rgb(255, 204, 0);
+$green-light: rgb(52, 199, 89);
+$mint-light: rgb(0, 199, 190);
+$teal-light: rgb(48, 176, 199);
+$cyan-light: rgb(50, 173, 230);
+$blue-light: rgb(0, 122, 255);
+$indigo-light: rgb(88, 86, 214);
+$purple-light: rgb(175, 82, 222);
+$pink-light: rgb(255, 45, 85);
+$brown-light: rgb(162, 132, 94);
+$gray-light: rgb(142, 142, 147);
+$gray-light2: rgb(174, 174, 178);
+$gray-light3: rgb(199, 199, 204);
+$gray-light4: rgb(209, 209, 214);
+$gray-light5: rgb(229, 229, 234);
+$gray-light6: rgb(242, 242, 247);
+$white: rgb(248, 248, 248);
+$black: rgb(22, 22, 24);
+
+// Dark colors
+$red-dark: rgb(255, 69, 48);
+$orange-dark: rgb(255, 159, 10);
+$yellow-dark: rgb(255, 159, 10);
+$green-dark: rgb(48, 209, 88);
+$mint-dark: rgb(102, 212, 207);
+$teal-dark: rgb(64, 200, 224);
+$cyan-dark: rgb(100, 210, 255);
+$blue-dark: rgb(10, 132, 255);
+$indigo-dark: rgb(94, 92, 230);
+$purple-dark: rgb(191, 90, 242);
+$pink-dark: rgb(255, 55, 95);
+$brown-dark: rgb(172, 142, 104);
+$gray-dark: rgb(142, 142, 147);
+$gray-dark2: rgb(99, 99, 102);
+$gray-dark3: rgb(72, 72, 74);
+$gray-dark4: rgb(58, 58, 60);
+$gray-dark5: rgb(44, 44, 46);
+$gray-dark6: rgb(28, 28, 30);
+
+// Element styling
+$transition: all 0.3s ease-in-out;
+$radius: 0.5rem;
+$light-shadow: 0 5px 15px $gray-light2;
+$ff-primary: sans-serif;
+
+*::before,
+*,
+*::after {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $ff-primary;
+  line-height: 1.3;
+  background: $white;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+li > a {
+  all: inherit;
+}
+
+li {
+  list-style: none;
+  text-indent: 0.5rem;
+}
+
+a:visited,
+a:active,
+a {
+  text-decoration: none;
+  color: $blue-light;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+a,
+p,
+h2,
+h3,
+h4,
+li,
+ol {
+  font-weight: 300;
+  padding: 0.25rem 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+code {
+  background: $black;
+  color: $green-dark;
+  font-family: monospace;
+  font-weight: 300;
+  padding: 0.25rem;
+  display: block;
+  border-radius: $radius;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 31pt;
+  }
+  h2 {
+    font-size: 25pt;
+  }
+  h3 {
+    font-size: 19pt;
+  }
+  h4 {
+    font-size: 17pt;
+  }
+  p {
+    font-size: 14pt;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 32pt;
+  }
+  h2 {
+    font-size: 26pt;
+  }
+  h3 {
+    font-size: 20pt;
+  }
+  h4 {
+    font-size: 18pt;
+  }
+  p {
+    font-size: 15pt;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 33pt;
+  }
+  h2 {
+    font-size: 27pt;
+  }
+  h3 {
+    font-size: 21pt;
+  }
+  h4 {
+    font-size: 19pt;
+  }
+  p {
+    font-size: 16pt;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 34pt;
+  }
+  h2 {
+    font-size: 28pt;
+  }
+  h3 {
+    font-size: 22pt;
+  }
+  h4 {
+    font-size: 20pt;
+  }
+  p {
+    font-size: 17pt;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  h1 {
+    font-size: 36pt;
+  }
+  h2 {
+    font-size: 30pt;
+  }
+  h3 {
+    font-size: 24pt;
+  }
+  h4 {
+    font-size: 22pt;
+  }
+  p {
+    font-size: 19pt;
+  }
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0.7rem 0;
+}
+
+//--------------------------------
+.clearfix::before,
+.clearfix,
+.clearfix::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.btn {
+  display: inline-block;
+  color: $white;
+  background: $blue-light;
+  box-shadow: $light-shadow;
+  border-radius: $radius;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: $transition;
+  border: none;
+  margin: 0.25rem;
+}
+
+.btn:hover {
+  background: $blue-dark;
+  text-decoration: none;
+}
+
+.badge {
+  display: inline-block;
+  background: $black;
+  color: $white;
+  padding: 0.125rem 0.5rem;
+  border-radius: $radius;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-center {
+  width: 80vw;
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 300;
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.underline {
+  width: 5rem;
+  height: 0.5rem;
+  background: $blue-light;
+  border-radius: $radius;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem 1rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .section-center {
+    width: 85vw;
+    max-width: 992px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 90vw;
+    max-width: 1170px;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .section-center {
+    width: 95vw;
+    max-width: 1500px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .section-center {
+    width: 95vw;
+    max-width: 2000px;
+  }
+}
+
+.dark {
+  background: $black;
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: $white;
+  }
+  p,
+  li,
+  ol {
+    color: $gray-dark2;
+  }
+  code {
+    background: #000;
+  }
+  a {
+    color: $blue-dark;
+  }
+  .underline {
+    background: $blue-dark;
+  }
+  .badge {
+    background: $gray-dark5;
+  }
+  .btn {
+    box-shadow: 0 5px 15px $gray-dark6;
+    background: $blue-dark;
+    color: $white;
+  }
+  .btn:hover {
+    background: $blue-light;
+  }
+}

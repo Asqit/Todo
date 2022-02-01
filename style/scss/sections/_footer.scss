@@ -1,0 +1,16 @@
+.footer {
+  background-color: $gray-dark4;
+  &-center {
+    color: $white;
+  }
+}
+.footer-center {
+  text-align: center;
+}
+
+.footer.dark {
+  background-color: $gray-dark5;
+  .footer-center > p {
+    color: $gray-dark;
+  }
+}
