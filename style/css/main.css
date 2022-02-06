@@ -481,21 +481,3 @@ h4 {
 .App.dark > .App-center .App-output > .App-body > #output li .details {
   background-color: #3a3a3c;
 }
-
-.footer {
-  background-color: #3a3a3c;
-}
-.footer-center {
-  color: #f8f8f8;
-}
-
-.footer-center {
-  text-align: center;
-}
-
-.footer.dark {
-  background-color: #2c2c2e;
-}
-.footer.dark .footer-center > p {
-  color: #8e8e93;
-}

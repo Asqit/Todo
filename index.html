@@ -18,8 +18,10 @@
           I am sorry, but this pages requires you to enable JavaScript to work
           properly. So please upgrade your settings, then come back.
         </p>
-        <a href="#" class="no-js-btn">reload</a>
-        <a href="https://google.com" class="no-js-btn">google</a>
+        <a href="#" aria-label="reload" class="no-js-btn">reload</a>
+        <a href="https://google.com" aria-label="google" class="no-js-btn">
+          google
+        </a>
       </div>
     </noscript>
     <!--end of noscript-->
@@ -31,11 +33,10 @@
         <div class="App-output">
           <div class="App-title">
             <h4>Todos</h4>
-            <span>hide</span>
           </div>
           <div class="App-body">
             <ul id="output">
-              here will be your todos
+              <li>Here will be displayed all your todos</li>
             </ul>
           </div>
         </div>
@@ -43,7 +44,6 @@
         <div class="App-input">
           <div class="App-title">
             <h4>Add a todo</h4>
-            <span>hide</span>
           </div>
           <div class="App-body">
             <form>
@@ -60,7 +60,7 @@
                 placeholder="Todo description(optional)"
               ></textarea>
               <div>
-                Todo priority:
+                <label for="input-priority">todo priority:</label>
                 <select id="input-priority" required>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -81,47 +81,6 @@
       </div>
     </header>
     <!--App-->
-
-    <!--Description-->
-    <section class="section description">
-      <div class="section-center description-center">
-        <div class="section-title">
-          <h2>About <span>Todos</span></h2>
-          <div class="underline"></div>
-        </div>
-        <p>
-          liquam suscipit eos cumque magni! A aliquid sequi rerum tempora saepe.
-          Dolorum ipsa iure illo vitae harum minus optio quaerat ipsum tempora.
-          Aliquam saepe harum quibusdam, delectus blanditiis illum magni.
-          Debitis, unde sapiente enim et <a href="#">accusamus</a> hic qui modi
-          voluptates. Ipsum placeat deleniti ea ipsam atque vero, enim quam quod
-          voluptas accusantium unde aliquam quae dicta corporis eum inventore ut
-          quisquam. <span class="badge">Prague</span> nisi blanditiis enim ullam
-          esse deleniti provident id cupiditate dicta dolore sit, laboriosam
-          inventore neque numquam consequuntur saepe eius, fuga totam vitae
-          veritatis. Placeat, reiciendis fuga, deleniti consequatur harum itaque
-          excepturi quia magni consectetur doloribus earum quo dolorem optio
-          modi quos ipsam quas odit <span class="badge">1989</span> vitae
-          repellat facere? Mollitia enim nam obcaecati possimus autem dicta
-          excepturi nemo dolorum minima beatae recusandae quidem quod ipsum
-          optio sequi repellendus odit, explicabo sed voluptate. CLorem ipsum
-          dolor sit amet consectetur, adipisicing elit. Tenetur aorporis
-          inventore labore expedita quos tenetur nemo reiciendis!
-        </p>
-      </div>
-    </section>
-    <!--Description-->
-
-    <!--footer-->
-    <footer class="section footer">
-      <div class="section-center footer-center">
-        <p>copyright &copy; <span id="copy-year">2022</span> Andrew Tuček</p>
-        <p>source code <a href="#">here</a></p>
-      </div>
-    </footer>
-    <!--footer-->
-
-    <!---->
     <script src="./scripts/dist/main.js"></script>
   </body>
 </html>

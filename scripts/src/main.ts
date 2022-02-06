@@ -109,24 +109,12 @@ const handleSubmit = (e?: any): void => {
   }
 };
 //--------------------------------------------------------
-const switchMode = (): void => {
-  let all = document.querySelectorAll(".section");
-  document.querySelector(".App").classList.toggle("dark");
-
-  all.forEach((a) => a.classList.toggle("dark"));
-};
-//--------------------------------------------------------
 const main = (e?: any): void => {
   submit = document.getElementById("input-save") as HTMLInputElement;
   submit.addEventListener("click", handleSubmit);
 
   if (localStorage.length > 0) renderData(loadData());
   else localStorage.setItem("TODOS", "[]");
-
-  let d = new Date();
-  document.querySelector("#copy-year").innerHTML = d.getFullYear().toString();
-
-  if (d.getHours() >= 19 && d.getHours() <= 7) switchMode();
 };
 
 window.addEventListener("load", main);

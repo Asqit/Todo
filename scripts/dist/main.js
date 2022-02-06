@@ -1,1 +1,95 @@
-var submit;var removeTask=function(id){var todos=loadData();todos=todos.filter(function(todo){return todo.id!=id});localStorage.setItem("TODOS",JSON.stringify(todos));renderData(loadData())};var renderData=function(data){var output=document.getElementById("output");output.innerHTML="";data.sort(function(a,b){return b.priority-a.priority});data.forEach(function(task){output.innerHTML+="\n      <li>\n        <b>".concat(task.title,"</b>\n        <input type=\"checkbox\" id=\"dropdown").concat(task.id,"\" class=\"dropdown\" style=\"display:none\"/>\n        <div>\n            <label for=\"dropdown").concat(task.id,"\" class=\"btn\">details</label>\n            <span class=\"btn remove\" onclick=\"removeTask(").concat(task.id,")\">remove</span>\n        </div>\n        <div class=\"details\">\n            <b>priority:").concat(task.priority,"</b>\n            <p>\n                ").concat(task.description,"\n            </p>\n        </div>\n      </li>")})};var loadData=function(){var payload=JSON.parse(localStorage.getItem("TODOS"));return payload};var saveData=function(task){if(task.title.length>0){if(localStorage.length>0){var payload=JSON.parse(localStorage.getItem("TODOS"));payload.push(task);localStorage.setItem("TODOS",JSON.stringify(payload))}else{var payload=[task];localStorage.setItem("TODOS",JSON.stringify(payload))}if(localStorage.length>0){return true}else{console.error("ERROR:Failed to save data");return false}}else{alert("Please, fill out all required input fields");return true}};var fetchData=function(){var title=document.getElementById("input-title");var desc=document.getElementById("input-descr");var priority=document.getElementById("input-priority");var id=JSON.parse(localStorage.getItem("TODOS")).length;var result={id:id,title:title.value,description:desc.value||"",priority:priority.value};title.value="";desc.value="";priority.value="1";return result};var handleSubmit=function(e){e.preventDefault();if(saveData(fetchData())){renderData(loadData())}else{console.error("ERROR:Failed to save data");alert("an error occured, please try again later")}};var switchMode=function(){var all=document.querySelectorAll(".section");document.querySelector(".App").classList.toggle("dark");all.forEach(function(a){return a.classList.toggle("dark")})};var main=function(e){submit=document.getElementById("input-save");submit.addEventListener("click",handleSubmit);if(localStorage.length>0){renderData(loadData())}else{localStorage.setItem("TODOS","[]")}var d=new Date();document.querySelector("#copy-year").innerHTML=d.getFullYear().toString();if(d.getHours()>=19&&d.getHours()<=7){switchMode()}}window.addEventListener("load",main);
+"use strict";
+let submit;
+const removeTask = (id) => {
+    let todos = loadData();
+    todos = todos.filter((todo) => {
+        return todo.id != id;
+    });
+    localStorage.setItem("TODOS", JSON.stringify(todos));
+    renderData(loadData());
+};
+const renderData = (data) => {
+    let output = document.getElementById("output");
+    output.innerHTML = "";
+    data.sort((a, b) => {
+        return b.priority - a.priority;
+    });
+    data.forEach((task) => {
+        output.innerHTML += `
+      <li>
+        <b>${task.title}</b>
+        <input type="checkbox" id="dropdown${task.id}" class="dropdown" style="display:none"/>
+        <div>
+            <label for="dropdown${task.id}" class="btn">details</label>
+            <span class="btn remove" onclick="removeTask(${task.id})">remove</span>
+        </div>
+        <div class="details">
+            <b>priority:${task.priority}</b>
+            <p>
+                ${task.description}
+            </p>
+        </div>
+      </li>`;
+    });
+};
+const loadData = () => {
+    let payload = JSON.parse(localStorage.getItem("TODOS"));
+    return payload;
+};
+const saveData = (task) => {
+    if (task.title.length > 0) {
+        if (localStorage.length > 0) {
+            let payload = JSON.parse(localStorage.getItem("TODOS"));
+            payload.push(task);
+            localStorage.setItem("TODOS", JSON.stringify(payload));
+        }
+        else {
+            let payload = [task];
+            localStorage.setItem("TODOS", JSON.stringify(payload));
+        }
+        if (localStorage.length > 0)
+            return true;
+        else {
+            console.error(`ERROR:Failed to save data`);
+            return false;
+        }
+    }
+    else {
+        alert("Please, fill out all required input fields");
+        return true;
+    }
+};
+const fetchData = () => {
+    let title = document.getElementById("input-title");
+    let desc = document.getElementById("input-descr");
+    let priority = document.getElementById("input-priority");
+    let id = JSON.parse(localStorage.getItem("TODOS")).length;
+    let result = {
+        id: id,
+        title: title.value,
+        description: desc.value || "",
+        priority: priority.value,
+    };
+    title.value = "";
+    desc.value = "";
+    priority.value = "1";
+    return result;
+};
+const handleSubmit = (e) => {
+    e.preventDefault();
+    if (saveData(fetchData()))
+        renderData(loadData());
+    else {
+        console.error("ERROR:Failed to save data");
+        alert("an error occured, please try again later");
+    }
+};
+const main = (e) => {
+    submit = document.getElementById("input-save");
+    submit.addEventListener("click", handleSubmit);
+    if (localStorage.length > 0)
+        renderData(loadData());
+    else
+        localStorage.setItem("TODOS", "[]");
+};
+window.addEventListener("load", main);
