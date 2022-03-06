@@ -10,12 +10,13 @@ const removeTask = (id) => {
 };
 const renderData = (data) => {
     let output = document.getElementById("output");
-    output.innerHTML = "";
-    data.sort((a, b) => {
-        return b.priority - a.priority;
-    });
-    data.forEach((task) => {
-        output.innerHTML += `
+    if (output) {
+        output.innerHTML = "";
+        data.sort((a, b) => {
+            return b.priority - a.priority;
+        });
+        data.forEach((task) => {
+            output.innerHTML += `
       <li>
         <b>${task.title}</b>
         <input type="checkbox" id="dropdown${task.id}" class="dropdown" style="display:none"/>
@@ -30,7 +31,12 @@ const renderData = (data) => {
             </p>
         </div>
       </li>`;
-    });
+        });
+    }
+    else {
+        console.error("ERROR:Could not locate ul#output");
+        alert("An error occupied, please try again later");
+    }
 };
 const loadData = () => {
     let payload = JSON.parse(localStorage.getItem("TODOS"));

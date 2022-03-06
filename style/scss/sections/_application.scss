@@ -7,152 +7,127 @@
 * * * * * * * * * * * * * * * * * * * * * * *  */
 .App {
   width: 100vw;
-  max-width: 100%;
   height: 100vh;
-  .btn {
-    box-shadow: none;
-    cursor: pointer;
-    border: none;
-  }
-}
-
-// App container
-.App-center {
-  width: 90%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-evenly;
-  // flex items
-  .App-input,
-  .App-output {
-    min-width: 350px;
-    flex: 0 0 45%;
-    border: 1px solid $gray-light3;
-    border-radius: $radius;
-  }
-}
-
-// "window title"
-.App-title {
-  width: 100%;
-  height: 10%;
-  background-color: $gray-light5;
-  border-bottom: 1px solid $gray-light3;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-top-left-radius: $radius;
-  border-top-right-radius: $radius;
-  span {
-    color: $gray-light;
-    cursor: pointer;
-  }
-  span:hover {
-    text-decoration: underline;
-  }
-}
-
-// "window canvas"
-.App-body {
-  height: 90%;
-}
-
-// input
-.App-input > .App-body > form {
-  width: 100%;
-  margin: 0 auto;
-  height: 100%;
-  text-align: center;
-  input,
-  textarea {
-    width: 90%;
-    margin: 0.5rem 0;
-    padding: 0.5rem 1rem;
-    font-family: $ff-primary;
-    border-radius: $radius;
-    border: 1px solid $gray-light5;
-    transition: $transition;
-    resize: none;
-  }
-  input:focus,
-  textarea:focus {
-    border: 1px solid $blue-light;
-  }
-  textarea {
-    height: 150px;
-  }
-  input[type="submit"] {
-    border: none;
-  }
-}
-
-// output
-.App-output > .App-body {
-  overflow-y: hidden;
-}
-.App-output > .App-body > #output {
-  overflow-y: auto;
-  height: 100%;
-  li {
-    text-indent: 0;
+  max-width: 100%;
+  max-height: 100vh;
+  // container
+  &-center {
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: $gray-light6;
-    border-bottom: 1px solid $gray-light3;
-    .remove {
-      background-color: $red-light;
+    flex-direction: column-reverse;
+  }
+  //input
+  &-input {
+    flex: 0 0 50%;
+    #input {
+      width: 90%;
+      height: 90%;
+      position: relative;
+      left: 5%;
+      top: 5%;
+      text-align: center;
+      input,
+      textarea {
+        padding: 0.5rem;
+        width: 100%;
+        margin: 0.25rem 0;
+        border-radius: 0.25rem;
+        border: 2px solid $gray-light3;
+      }
+      input:focus,
+      textarea:focus {
+        border: 2px solid $blue-light;
+      }
+      textarea {
+        resize: none;
+        height: 150px;
+        font-family: $ff-primary;
+      }
+      input[type="submit"] {
+        cursor: pointer;
+        border: none;
+      }
     }
-    .details {
-      display: none;
+  }
+  //output
+  &-output {
+    flex: 0 0 50%;
+    #output {
+      height: 90%;
+      width: 90%;
+      position: relative;
+      top: 5%;
+      left: 5%;
+      background-color: $gray-light3;
+      border-radius: 0.25rem;
+      overflow-y: auto;
+      overflow-x: hidden;
+      li {
+        border-radius: 0.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: $gray-light4;
+        .details {
+          display: none;
+        }
+
+        .dropdown:checked ~ .details {
+          display: block;
+          flex-basis: 98%;
+          margin-left: 1%;
+          background-color: $gray-light2;
+          border-radius: 0.25rem;
+        }
+
+        .remove {
+          background-color: $red-light;
+        }
+      }
     }
-    .dropdown:checked ~ .details {
-      display: block;
-      flex: 0 0 98%;
-      margin: 0 auto;
-      padding: 0.5rem;
-      background-color: $gray-light5;
+  }
+  // column style
+  &-title {
+    width: 100%;
+    height: 2.5rem;
+    background-color: $gray-light;
+    h4 {
+      text-align: center;
+      color: $white;
+      margin: 0;
     }
+  }
+  &-body {
+    height: calc(100% - 2.5rem);
+    background-color: $gray-light5;
   }
 }
 
-@media screen and (min-width: 992px) {
-  .App {
-    height: 50vh;
-  }
+@media screen and (min-width: 768px) {
   .App-center {
     flex-direction: row;
   }
 }
 
-.App.dark > .App-center {
-  .App-title {
-    background-color: $black;
-    border-bottom: 1px solid $gray-dark3;
-  }
-  .App-input,
-  .App-output {
-    border: 1px solid $gray-dark3;
-  }
-  .App-input {
-    color: $white;
-    textarea,
-    input[type="text"] {
-      background-color: $gray-dark6;
-      border: 1px solid $gray-dark5;
-      color: $white;
-    }
-  }
-  .App-output > .App-body > #output {
-    li {
-      background-color: $gray-dark6;
-      border-bottom: 1px solid $gray-dark3;
-      .details {
-        background-color: $gray-dark4;
+@media screen and (min-width: 1170px) {
+  .App-center {
+    width: 90%;
+    height: 90%;
+    position: relative;
+    top: 5%;
+    left: 5%;
+    justify-content: space-evenly;
+    .App-input,
+    .App-output {
+      flex: 0 0 45%;
+      box-shadow: $light-shadow;
+      #input {
+        input,
+        textarea {
+          max-width: 500px;
+        }
       }
     }
   }

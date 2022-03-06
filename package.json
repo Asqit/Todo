@@ -4,6 +4,7 @@
   "description": "just an Todo app",
   "main": "index.html",
   "scripts": {
+    "start-desk": "electron .",
     "sass-compiler": "sass --watch --no-source-map ./style/scss/main.scss ./style/css/main.css"
   },
   "author": "Ondřej Tuček",
@@ -11,5 +12,8 @@
   "dependencies": {
     "sass": "^1.49.4",
     "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "electron": "^17.1.0"
   }
 }
