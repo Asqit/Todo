@@ -24,7 +24,7 @@ const removeTask = (id: number) => {
 };
 //--------------------------------------------------------
 const renderData = (data: Todo[]): void => {
-  let output = document.getElementById("output");
+  let output: HTMLElement = document.getElementById("output");
 
   if (output) {
     output.innerHTML = "";
@@ -115,9 +115,20 @@ const handleSubmit = (e?: any): void => {
   }
 };
 //--------------------------------------------------------
+function time(): void {
+  let d: Date = new Date();
+  let destination: any = document.querySelector(".time");
+
+  destination.innerHTML = `<b>${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}<b>`;
+}
+//--------------------------------------------------------
+function windowHandler() {}
+//--------------------------------------------------------
 const main = (e?: any): void => {
   submit = document.getElementById("input-save") as HTMLInputElement;
   submit.addEventListener("click", handleSubmit);
+
+  setInterval(time, 1000);
 
   if (localStorage.length > 0) renderData(loadData());
   else localStorage.setItem("TODOS", "[]");

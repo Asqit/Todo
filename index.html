@@ -26,8 +26,27 @@
     </noscript>
     <!--end of noscript-->
 
+    <!--controls-->
+    <header class="taskbar hidden">
+      <div class="taskbar-center">
+        <div class="apps">
+          <div class="apps-app list">
+            <b>List</b>
+          </div>
+          <div class="apps-app form">
+            <b>Form</b>
+          </div>
+          <div class="apps-app detail">
+            <b>help</b>
+          </div>
+        </div>
+        <div class="time"></div>
+      </div>
+    </header>
+    <!--controls-->
+
     <!--App-->
-    <header class="App">
+    <section class="App">
       <div class="App-center">
         <!-------------OUTPUT------------------>
         <div class="App-output">
@@ -78,8 +97,26 @@
             </form>
           </div>
         </div>
+        <!----------------Help----------------->
+        <div class="App-help hidden">
+          <div class="App-title">
+            <h4>Help</h4>
+          </div>
+          <div class="App-body">
+            <p>1) fil all input fields on the "Add a todo" window</p>
+
+            <p>2) click on save</p>
+
+            <p>3) your todo will be saved localy on your browser</p>
+
+            <p>
+              4) your todo will be shown on the "Todos" window Each todo has two
+              buttons (delete, details)
+            </p>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
     <!--App-->
     <script src="./scripts/dist/main.js"></script>
   </body>

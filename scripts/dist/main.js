@@ -90,9 +90,16 @@ const handleSubmit = (e) => {
         alert("an error occured, please try again later");
     }
 };
+function time() {
+    let d = new Date();
+    let destination = document.querySelector(".time");
+    destination.innerHTML = `<b>${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}<b>`;
+}
+function windowHandler() { }
 const main = (e) => {
     submit = document.getElementById("input-save");
     submit.addEventListener("click", handleSubmit);
+    setInterval(time, 1000);
     if (localStorage.length > 0)
         renderData(loadData());
     else
